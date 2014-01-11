@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @new_item.user %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @new_item.title %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @new_item.url %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @new_item.content %>
+</p>
+
+<p>
+  <strong>Votes:</strong>
+  <%= @new_item.votes %>
+</p>
+
+<p>
+  <strong>Flagged:</strong>
+  <%= @new_item.flagged %>
+</p>
+
+<%= link_to 'Edit', edit_new_item_path(@new_item) %> |
+<%= link_to 'Back', new_items_path %>

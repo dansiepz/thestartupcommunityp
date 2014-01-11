@@ -1,3 +1,22 @@
-<h3>User</h3>
+<h3>My account</h3>
 <p>User: <%= @user.name %></p>
 <p>Email: <%= @user.email if @user.email %></p>
+<p><%= link_to "Change email/password", edit_user_registration_path, class: 'btn btn-default' %></p>
+
+<hr>
+
+<h3>My profile</h3>
+<% if @user_profile %>
+
+	<h4>Tagline</h4>
+	<p><%= @user_profile.tagline %></p>
+
+	<h4>About me</h4>
+	<p><%= @user_profile.about %></p>
+
+	<p><%= link_to "Edit my profile", edit_user_profile_path(current_user), class: 'btn btn-default' %></p>
+<% else %>
+	<p><%= link_to "Create your profile", new_user_profile_path, class: 'btn btn-success' %></p>
+
+
+<% end %>

@@ -11,7 +11,71 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140110171837) do
+ActiveRecord::Schema.define(version: 20140111020502) do
+
+  create_table "business_profile_types", force: true do |t|
+    t.integer  "business_profile_id"
+    t.integer  "profile_type_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "business_profile_types", ["business_profile_id"], name: "index_business_profile_types_on_business_profile_id"
+  add_index "business_profile_types", ["profile_type_id"], name: "index_business_profile_types_on_profile_type_id"
+
+  create_table "business_profiles", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "url"
+    t.string   "twitter"
+    t.string   "facebook"
+    t.string   "google"
+    t.string   "employees"
+    t.string   "slug"
+    t.string   "address"
+    t.boolean  "hiring"
+    t.string   "image"
+    t.string   "email"
+    t.string   "phone"
+    t.string   "linkedin"
+    t.string   "github"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.boolean  "gmaps"
+    t.integer  "owner"
+    t.boolean  "responsible"
+  end
+
+  create_table "contact_forms", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "phone"
+    t.string   "subject"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "new_items", force: true do |t|
+    t.integer  "user_id"
+    t.string   "title"
+    t.string   "url"
+    t.text     "content"
+    t.integer  "votes"
+    t.boolean  "flagged"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "new_items", ["user_id"], name: "index_new_items_on_user_id"
+
+  create_table "profile_types", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "roles", force: true do |t|
     t.string   "name"
@@ -23,6 +87,58 @@ ActiveRecord::Schema.define(version: 20140110171837) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
   add_index "roles", ["name"], name: "index_roles_on_name"
+
+  create_table "taggings", force: true do |t|
+    t.integer  "tag_id"
+    t.integer  "taggable_id"
+    t.string   "taggable_type"
+    t.integer  "tagger_id"
+    t.string   "tagger_type"
+    t.string   "context",       limit: 128
+    t.datetime "created_at"
+  end
+
+  add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true
+
+  create_table "tags", force: true do |t|
+    t.string "name"
+  end
+
+  add_index "tags", ["name"], name: "index_tags_on_name", unique: true
+
+  create_table "user_business_profiles", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "business_profile_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "is_owner"
+    t.string   "position"
+  end
+
+  add_index "user_business_profiles", ["business_profile_id"], name: "index_user_business_profiles_on_business_profile_id"
+  add_index "user_business_profiles", ["user_id"], name: "index_user_business_profiles_on_user_id"
+
+  create_table "user_profiles", force: true do |t|
+    t.integer  "user_id"
+    t.text     "about"
+    t.string   "email"
+    t.string   "phone"
+    t.string   "url"
+    t.string   "twitter"
+    t.string   "facebook"
+    t.string   "google"
+    t.string   "slug"
+    t.boolean  "mentor"
+    t.string   "image"
+    t.string   "name"
+    t.string   "tagline"
+    t.string   "linkedin"
+    t.string   "github"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "user_profiles", ["user_id"], name: "index_user_profiles_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -38,10 +154,14 @@ ActiveRecord::Schema.define(version: 20140110171837) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
+    t.string   "slug"
+    t.boolean  "opt_in"
+    t.boolean  "accept_terms"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["slug"], name: "index_users_on_slug", unique: true
 
   create_table "users_roles", id: false, force: true do |t|
     t.integer "user_id"
