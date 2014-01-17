@@ -14,9 +14,27 @@
 	<h4>About me</h4>
 	<p><%= @user_profile.about %></p>
 
-	<p><%= link_to "Edit my profile", edit_user_profile_path(current_user), class: 'btn btn-default' %></p>
+	<p><%= link_to "Edit my profile", edit_user_profile_path(current_user), class: 'btn btn-default' %> <%= link_to "View my profile", user_profile_path(current_user), class: 'btn btn-info' %></p>
 <% else %>
 	<p><%= link_to "Create your profile", new_user_profile_path, class: 'btn btn-success' %></p>
+<% end %>
+
+
+
+<% if @user.business_profiles.count > 0 %>
+
+	<h2>My businesses</h2>
+	<% current_user.business_profiles.each do |business_profile| %>
+		<p><%= business_profile.name %></p>
+	<% end %>
 
 
 <% end %>
+
+	<%= link_to "Create business profile", new_business_profile_path, class: 'btn btn-success' %>
+
+
+
+
+
+

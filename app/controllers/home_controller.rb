@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @users = User.all
+    @user_profiles = UserProfile.all
+    @business_profiles = BusinessProfile.all
   end
 end

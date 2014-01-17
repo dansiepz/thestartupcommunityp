@@ -1,1 +1,12 @@
 <h1>The Startup Community</h1>
+
+
+<h2>User profiles</h2>
+<% @user_profiles.each do |user_profile| %>
+	<p><%= link_to user_profile.user.name, user_profile %></p>
+<% end %>
+
+<h2>Business profiles</h2>
+<% @business_profiles.each do |business_profile| %>
+	<p><%= link_to business_profile.name, business_profile %></p>
+<% end %>
