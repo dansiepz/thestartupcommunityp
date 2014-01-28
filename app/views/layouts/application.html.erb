@@ -7,14 +7,15 @@
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
+    <link href='http://fonts.googleapis.com/css?family=Dosis:300,500|Raleway:200,600' rel='stylesheet' type='text/css' />
   </head>
-  <body>
+  <body class="bg-color-grayLight1">
+  <div class="mainWrapper">
     <header>
-      <%= render 'layouts/navigation' %>
+      <%= render 'layouts/header' %>
     </header>
-    <main role="main" class="container">
-       <%= render 'layouts/messages' %>
        <%= yield %>
-    </main>
+    <%= render 'layouts/footer' %>
+    </div>
   </body>
 </html>

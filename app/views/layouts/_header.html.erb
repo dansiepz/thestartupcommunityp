@@ -1,0 +1,58 @@
+<header class="bg-color-grayDark1 text-color-light">
+        <div class="container">
+          <div class="row">
+
+            <div id="logo-region" class="col-md-3">
+              <a href="/">
+                <%= image_tag "bracaraLogo.png", alt: "Bracara Logo", title:"Bracara Logo" %></a>
+            </div> <!-- /logo-region -->
+        
+            <div id="menu-region" class="col-md-9">
+              <nav class="navbar main-menu-theme1" role="navigation">
+                <!-- Menu button for mobile display -->
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">MENU</button>
+                </div>
+            
+                <!-- Navigation links -->
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                  <ul class="nav navbar-right navbar-nav">
+                    <li><a href="#">About</a></li>
+                    <li><%= link_to "Founders", user_profiles_path %></li>
+                    <li><%= link_to "Startups", business_profiles_path %></li>
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Community</a>
+                      <ul class="dropdown-menu">
+                        <li><a href="index-2.html">Home 2</a></li>
+                        <li><a href="index-3.html">Home 3</a></li>
+                        <li><a href="page-about-me.html">About Me</a></li>
+                        <li><a href="page-faq.html">FAQ</a></li>
+                        <li><a href="page-404.html">404 page</a></li>
+                        <li><a href="page-403.html">403 page</a></li>
+                        <li><a href="page-maintenance.html">Maintenance page</a></li>
+                        <li><a href="page-construction.html">Under Construction</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#">Contact</a></li>
+                    <% if user_signed_in? %>
+                        <li class="dropdown"><%= link_to current_user, class: 'dropdown-toggle' do %><i class="startup-vcard startup-lg"></i> My account<% end %>
+                            <ul class="dropdown-menu">
+                              <% if current_user.user_profile %>
+                                <li><%= link_to "View profile", user_profile_path(current_user.user_profile) %></li>
+                              <% else %>
+                                <li><%= link_to "Create your profile", new_user_profile_path %></li>
+                              <% end %>
+                                <li><%= link_to "Sign out", destroy_user_session_path, :method=>'delete' %></li>
+                            </ul>
+                        </li>
+                    <% else %>
+                        <li><%= link_to "Already a member?", new_user_session_path %></li>
+                    <% end %>
+                  </ul>
+                </div> <!-- /navbar-collapse -->
+              </nav>
+            </div> <!-- /menu-region -->
+
+          </div> <!-- /row -->
+        </div> <!-- /container -->
+      </header>

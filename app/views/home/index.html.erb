@@ -1,12 +1,379 @@
-<h1>The Startup Community</h1>
 
+      <%= render 'layouts/highlighted' %>
+<div id="content-region" class="region">
+        
 
-<h2>User profiles</h2>
-<% @user_profiles.each do |user_profile| %>
-	<p><%= link_to user_profile.user.name, user_profile %></p>
-<% end %>
+         <div id="content-wide-1-region" class="region">
+              <div class="container">
+                
+                <div id="info-panel-block" class="info-panel block">
+                  
+                  <div class="row">
+                    <div class="col-xs-12 col-md-offset-1 col-md-10">
+                      <h5 class="info-panel-title">We keep improving our customer services and products and that is why we keep growing the number of happy clients! Be our next happy client.</h5> <!-- /info-panel-title -->
+                    </div> <!-- /col-xs-12 -->
+                  </div> <!-- /row -->
+                  
+                  <div class="row">
+                    
+                    <div class="info-panel-item col-xs-12 col-sm-6 col-md-3">
+                      <i class="startup-vcard"></i>
+                      <h3 class="info-panel-number text-color-theme"><%= UserProfile.count %></h3>
+                      <p>founder profiles</p>
+                    </div> <!-- /info-panel-item -->
+                    
+                    <div class="info-panel-item col-xs-12 col-sm-6 col-md-3 margin-top-xs-50">
+                      <i class="startup-users"></i>
+                      <h3 class="info-panel-number text-color-theme"><%= BusinessProfile.count %></h3>
+                      <p>startups</p>
+                    </div> <!-- /info-panel-item -->
+                    
+                    <div class="clearfix visible-sm"></div>
+                    
+                    <div class="info-panel-item col-xs-12 col-sm-6 col-md-3 margin-top-sm-50">
+                      <i class="startup-user"></i>
+                      <h3 class="info-panel-number text-color-theme"><%= User.count %></h3>
+                      <p>happy users</p>
+                    </div> <!-- /info-panel-item -->
+                    
+                    <div class="info-panel-item col-xs-12 col-sm-6 col-md-3 margin-top-sm-50">
+                      <i class="startup-location"></i>
+                      <h3 class="info-panel-number text-color-theme">65</h3>
+                      <p>countries</p>
+                    </div> <!-- /info-panel-item -->
+                    
+                  </div> <!-- /row -->
+                  
+                </div> <!-- /info-panel-block -->
+                
+              </div> <!-- /container -->
+            </div> <!-- /content-wide-2-region -->
+      
+      <div id="content-wide-2-region" class="region bg-color-grayLight2">
+        <div class="container">
+          
+          <div id="our-work-block" class="block">
+            
+            <h2 class="block-title">Our Work</h2>
 
-<h2>Business profiles</h2>
-<% @business_profiles.each do |business_profile| %>
-	<p><%= link_to business_profile.name, business_profile %></p>
-<% end %>
+            <div class="row">
+              <div class="our-work-item col-xs-12 col-sm-6 col-md-4">
+                <a href="portfolio-single.html">
+                  <figure>
+                    <%= image_tag "diego1-th.png", class: 'img-responsive' %>
+                    <figcaption>
+                      <h6>Map Marker</h6>
+                    </figcaption>
+                  </figure>
+                </a>
+              </div> <!-- /our-work-item -->
+              
+              <div class="our-work-item col-xs-12 col-sm-6 col-md-4">
+                <a href="portfolio-single.html">
+                  <figure>
+                    <%= image_tag "diego2-th.png", class: 'img-responsive' %>
+                    <figcaption>
+                      <h6>Flat Phone</h6>
+                    </figcaption>
+                  </figure>
+                </a>
+              </div> <!-- /our-work-item -->
+              
+              <div class="our-work-item col-xs-12 col-sm-6 col-md-4">
+                <a href="portfolio-single.html">
+                  <figure>
+                    <%= image_tag "diego3-th.png", class: 'img-responsive' %>
+                    <figcaption>
+                      <h6>Metro Tickets</h6>
+                    </figcaption>
+                  </figure>
+                </a>
+              </div> <!-- /our-work-item -->
+              
+              <div class="our-work-item col-xs-12 col-sm-6 col-md-4">
+                <a href="portfolio-single.html">
+                  <figure>
+                    <%= image_tag "diego4-th.png", class: 'img-responsive' %>
+                    <figcaption>
+                      <h6>Compass</h6>
+                    </figcaption>
+                  </figure>
+                </a>
+              </div> <!-- /our-work-item -->
+              
+              <div class="our-work-item col-xs-12 col-sm-6 col-md-4">
+                <a href="portfolio-single.html">
+                  <figure>
+                    <%= image_tag "diego5-th.png", class: 'img-responsive' %>
+                    <figcaption>
+                      <h6>Calendar</h6>
+                    </figcaption>
+                  </figure>
+                </a>
+              </div> <!-- /our-work-item -->
+              
+              <div class="our-work-item col-xs-12 col-sm-6 col-md-4">
+                <a href="portfolio-single.html">
+                  <figure>
+                    <%= image_tag "diego6-th.png", class: 'img-responsive' %>
+                    <figcaption>
+                      <h6>Cocktail</h6>
+                    </figcaption>
+                  </figure>
+                </a>
+              </div> <!-- /our-work-item -->
+
+            </div> <!-- /row -->
+            
+            <div class="our-work-link text-center">
+              <a href="portfolio.html" class="btn btn-primary">All Works</a>
+            </div> <!-- /our-work-link -->
+
+          </div> <!-- /our-work-block -->
+          
+        </div> <!-- /container -->
+      </div> <!-- /content-wide-1-region -->
+      
+      <div id="content-wide-2-region" class="region bg-color-theme">
+        <div class="container">
+          
+          <div id="call-to-action-1-block" class="call-to-action-1 block">
+            <div class="row vertical-center">
+                  
+              <div class="col-xs-12 col-md-9 text-center-sm">
+                <h4 class="text-color-light no-margin">We are looking forward to work with you!</h4>
+              </div>
+                  
+              <div class="col-xs-12 col-md-3 text-right text-center-sm margin-top-sm-40">
+                <a href="contact.php" class="btn btn-light">Contact us</a>
+              </div>
+                  
+            </div> <!-- /row -->
+          </div> <!-- /call-to-action-1-block -->
+          
+        </div> <!-- /container -->
+      </div> <!-- /content-wide-2-region -->
+      
+      <div id="content-wide-3-region" class="region">
+        <div class="container">
+          
+          <div id="services-3-block" class="services-3 block">
+            <div class="row">
+
+              <div class="services-3-list col-xs-12 col-md-4">
+
+                <div class="services-3-item">
+                  <div class="services-3-icon bg-color-theme text-color-light">
+                    <i class="icon-cloud"></i>
+                  </div> <!-- /services-3-icon -->
+                  <div class="services-3-text">
+                    <h6>Online Backup</h6>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  </div> <!-- /services-3-text -->
+                </div> <!-- /services-3-item -->
+                
+                <div class="services-3-item">
+                  <div class="services-3-icon bg-color-theme text-color-light">
+                    <i class="icon-truck"></i>
+                  </div> <!-- /services-3-icon -->
+                  <div class="services-3-text">
+                    <h6>Home Delivery</h6>
+                    <p>Curabitur congue mi non neque sodales laoreet.</p>
+                  </div> <!-- /services-3-text -->
+                </div> <!-- /services-3-item -->
+                
+                <div class="services-3-item">
+                  <div class="services-3-icon bg-color-theme text-color-light">
+                    <i class="icon-lock"></i>
+                  </div> <!-- /services-3-icon -->
+                  <div class="services-3-text">
+                    <h6>Security</h6>
+                    <p>Vestibulum mi leo, condimentum et mauris nec, eleifend pretium magna.</p>
+                  </div> <!-- /services-3-text -->
+                </div> <!-- /services-3-item -->
+                
+                <div class="services-3-item">
+                  <div class="services-3-icon bg-color-theme text-color-light">
+                    <i class="icon-bulb"></i>
+                  </div> <!-- /services-3-icon -->
+                  <div class="services-3-text">
+                    <h6>Great Ideas</h6>
+                    <p>Curabitur vulputate, quam nec tincidunt interdum, purus felis convallis.</p>
+                  </div> <!-- /services-3-text -->
+                </div> <!-- /services-3-item -->
+              </div> <!-- /services-3-list -->
+              
+              <div class="services-3-image col-xs-12 col-md-4 margin-top-sm-30 margin-bottom-sm-30">
+                <%= image_tag "iPhonePerspective.png", class: 'img-responsive' %>
+              </div> <!-- /services-3-image -->
+              
+              <div class="services-3-details col-xs-12 col-md-4">
+                <h5 class="no-margin-top text-color-theme">Driven by Quality</h5>
+                <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae. Morbi dapibus felis eget mattis sodales.</p>
+                <h5 class="text-color-theme">Customer Care</h5>
+                <p>Cras laoreet tristique ante, non dictum dolor vestibulum sit amet. Cras auctor tortor id. Fusce at luctus metus. Aenean viverra.</p>
+                <h5 class="text-color-theme">Profissional Support</h5>
+                <p>Proin mi sapien, varius eget auctor et, posuere in libero. Suspendisse sit amet felis vel. Suspendisse faucibus nisl et ligula placerat.</p>
+              </div> <!-- /services-3-details -->
+
+            </div> <!-- /row -->
+          </div> <!-- /services-3-block -->
+          
+        </div> <!-- /container -->
+      </div> <!-- /content-wide-3-region -->
+      
+      <div id="content-wide-4-region" class="region bg-color-grayLight2">
+        <div class="container">
+          
+          <div id="services-1-block" class="block">
+            
+            <div class="services-1-item row">
+              
+              <div class="services-1-item-icon text-center-xs col-xs-12 col-sm-3 col-md-offset-2 col-md-2">
+                <%= image_tag "booklet.png" %>
+              </div> <!-- /services-1-item-icon -->
+              
+              <div class="services-1-item-description text-center-xs text-right col-xs-12 col-sm-9 col-md-6">
+                <h2>Clean Code</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus volutpat est in vestibulum molestie. Mauris quis arcu in tellus faucibus ultricies sit amet eu nibh.</p>
+              </div> <!-- /services-1-item-description -->
+              
+            </div> <!-- /services-1-item -->
+            
+            <div class="services-1-item row">
+              
+              <div class="services-1-item-icon text-center-xs text-right col-xs-12 col-sm-3 col-sm-push-9 col-md-2 col-md-push-8">
+                <%= image_tag "megaphone.png" %>
+              </div> <!-- /services-1-item-icon -->
+              
+              <div class="services-1-item-description text-center-xs col-xs-12 col-sm-9 col-sm-pull-3 col-md-offset-2 col-md-6 col-md-pull-2">
+                <h2>Great Support</h2>
+                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed ac rutrum diam. Nulla facilisi. Pellentesque habitant morbi.</p>
+              </div> <!-- /services-1-item-description -->
+              
+            </div> <!-- /services-1-item -->
+            
+            <div class="services-1-item row">
+              
+              <div class="services-1-item-icon text-center-xs col-xs-12 col-sm-3 col-md-offset-2 col-md-2">
+                <%= image_tag "swatches.png" %>
+              </div> <!-- /services-1-item-icon -->
+              
+              <div class="services-1-item-description text-center-xs text-right col-xs-12 col-sm-9 col-md-6">
+                <h2>Multiple Colors</h2>
+                <p>Proin non eleifend lacus, sit amet feugiat libero. Duis imperdiet ligula at urna ornare, at venenatis arcu accumsan. Aliquam placerat, velit nec congue volutpat.</p>
+              </div> <!-- /services-1-item-description -->
+              
+            </div> <!-- /services-1-item -->
+            
+          </div> <!-- /services-1-block -->
+          
+        </div> <!-- /container -->
+      </div> <!-- /content-wide-4-region -->
+      
+      <div id="content-wide-5-region" class="region bg-image-sea">
+        <div class="container">
+          
+          <div id="testimonials-block" class="testimonials-block block">
+            
+            <div class="vertical-center row">
+              
+              <div class="testimonials-slider">
+                <ul class="slides">
+                  
+                  <li>
+                    <div class="testimonials-author text-center col-xs-12 col-md-8 col-md-offset-2">
+                      <h6>John Doe, CEO of Wired Magazine</h6>
+                    </div> <!-- /testimonials-author -->
+                    
+                    <div class="testimonials-content text-center col-xs-12 col-md-8 col-md-offset-2">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam malesuada lacus a bibendum pretium. Vivamus enim magna, varius at elit sed, euismod blandit odio. Curabitur tristique dolor sem, ac bibendum quam placerat quis.</p>
+                    </div> <!-- /testimonials-content -->
+                  </li>
+                  
+                  <li>
+                    <div class="testimonials-author text-center col-xs-12 col-md-8 col-md-offset-2">
+                      <h6>Joseph Doe, CEO of IBM</h6>
+                    </div> <!-- /testimonials-author -->
+                    
+                    <div class="testimonials-content text-center col-xs-12 col-md-8 col-md-offset-2">
+                      <p>Praesent convallis felis est, ac ultricies lectus facilisis quis. Nullam quis massa ullamcorper, faucibus est at, vehicula dui. Nullam in massa nec diam ultricies tempor.</p>
+                    </div> <!-- /testimonials-content -->
+                  </li>
+                  
+                </ul> <!-- /slides -->
+              </div> <!-- /testimonials-slider -->
+              
+            </div> <!-- /row -->
+
+          </div> <!-- /testimonials-block -->
+          
+        </div> <!-- /container -->
+      </div> <!-- /content-wide-5-region -->
+      
+      <div id="footer-columns-region" class="region bg-color-grayLight2">
+        <div class="container">
+          
+          <div class="row">
+            
+            <div id="footer-first-column" class="text-center col-xs-12 col-md-4">
+              
+              <div id="footer-contacts-block" class="block">
+                <h5 class="block-title">Contact us</h5>
+                
+                <address>
+                  <strong>Our Company, Inc.</strong><br />
+                  795 Fake Ave, Door 6<br />
+                  Wonderland, CA 94107
+                </address>
+                
+                <ul class="footer-contacts-list margin-top-20">
+                  <li>+351123456789</li>
+                  <li><a href="mailto:info@leaftree.pt">info@bracara.pt</a></li>
+                  <li><a href="mailto:support@leaftree.pt">sales@bracara.pt</a></li>
+                </ul> <!-- /footer-contacts-list -->
+              </div> <!-- /footer-contacts-block -->
+              
+            </div> <!-- /footer-first-column -->
+            
+            <div id="footer-second-column" class="text-center col-xs-12 col-md-4">
+              
+              <div id="footer-our-work-block" class="footer-our-work block">
+                <h5 class="block-title">Our Work</h5>
+                
+                <a href="portfolio-single.html"><%= image_tag "diego1-th.png" %></a>
+                <a href="portfolio-single.html"><%= image_tag "diego2-th.png" %></a>
+                <a href="portfolio-single.html"><%= image_tag "diego3-th.png" %></a>
+                <a href="portfolio-single.html"><%= image_tag "diego4-th.png" %></a>
+                <a href="portfolio-single.html"><%= image_tag "diego5-th.png" %></a>
+                <a href="portfolio-single.html"><%= image_tag "diego6-th.png" %></a>
+                
+              </div> <!-- /footer-our-work-block -->
+              
+            </div> <!-- /footer-second-column -->
+            
+            <div id="footer-third-column" class="text-center-sm col-xs-12 col-md-4">
+              
+              <div id="footer-latest-posts-block" class="footer-latest-posts block">
+                <h5 class="block-title">Latest Posts</h5>
+                
+                <div class="footer-latest-post">
+                  <h6><a href="blog-single.html">Lorem Ipsum</a></h6>
+                  <p>Lorem ipsum dolor sit amet, consectetur...</p>
+                  <small><a href="blog-single.html">read more</a></small>
+                </div> <!-- /footer-latest-post -->
+                
+                <div class="footer-latest-post">
+                  <h6><a href="blog-single.html">Etiam Tincidunt</a></h6>
+                  <p>Etiam tincidunt leo eu mauris pretium...</p>
+                  <small><a href="blog-single.html">read more</a></small>
+                </div> <!-- /footer-latest-post -->
+                
+              </div> <!-- /footer-latest-posts-block -->
+              
+            </div> <!-- /footer-third-column -->
+            
+          </div> <!-- /row -->
+          
+        </div> <!-- /container -->
+      </div> <!-- /footer-columns-region -->
